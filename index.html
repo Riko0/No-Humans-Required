@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MALViNA - Multimodal Artificial Language Vision Neural Assistant</title>
+    <title>No Humans Required Dataset</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -85,8 +85,8 @@
         <!-- Project Title -->
         <header class="text-center mb-10">
             <!-- Corrected semantic usage: h1 for main title, p for subtitle -->
-            <h1 class="text-4xl text-indigo-700 mt-10">MALViNA</h1>
-            <p class="text-2xl text-gray-700 mt-2">Multimodal Artificial Language Vision Neural Assistant</p>
+            <h1 class="text-4xl text-indigo-700 mt-10">No Human Required</h1>
+            <p class="text-2xl text-gray-700 mt-2">Introducing NHR: A High-Quality, Fully Automated Dataset for Image Editing</p>
             <div class="mt-8 flex justify-center flex-wrap button-group">
                 <a href="#" class="btn btn-primary">
                     <!-- User's provided Paper icon with updated viewBox -->
@@ -116,30 +116,31 @@
             <!-- Abstract Section -->
             <section class="section-box">
                 <h2 class="text-indigo-600">Abstract</h2>
-                <p>
-                    We introduce MALViNA, a novel Multimodal Artificial Language Vision Neural Assistant, designed to
-                    seamlessly integrate visual and linguistic understanding. MALViNA combines **state-of-the-art
-                    Vision-Language Models (VLMs) and Diffusion Models** to achieve **SOTA-level, pixel-perfect
-                    instructive image editing**. This cutting-edge architecture enables it to process and generate
-                    responses based on complex multimodal inputs. This work presents the architectural details,
-                    training methodology, and preliminary results demonstrating MALViNA's capabilities in tasks such
-                    as visual question answering, image captioning, and cross-modal reasoning, with a particular
-                    focus on its innovative image editing prowess. We believe MALViNA represents a significant step
-                    towards more holistic and intelligent AI systems.
+                <p>      
+                We are excited to introduce No Humans Required (NHR), a groundbreaking new dataset specifically designed to advance the field of image editing. 
+                NHR redefines how image editing datasets are created, boasting a fully automated pipeline that ensures unparalleled quality and scale. 
+                This innovative approach leverages state-of-the-art (SOTA) Vision-Language Models (VLMs) and other advanced AI models for both content generation and 
+                rigorous filtration, eliminating the need for manual annotation and its inherent biases and inefficiencies.
+                NHR stands apart by providing high-quality, pixel-perfect image editing sequences that are ideal for training 
+                and evaluating next-generation image editing models. 
+                Unlike existing datasets that often rely on human-curated examples, NHR's automated pipeline can generate an virtually limitless supply of diverse and complex editing scenarios, 
+                pushing the boundaries of what AI can achieve in visual manipulation.
                 </p>
             </section>
 
             <!-- Model Architecture / Key Features Section -->
             <section class="section-box">
-                <h2 class="text-indigo-600">Model Overview & Key Features</h2>
+                <h2 class="text-indigo-600">The NHR Pipeline: Unleashing Automated Excellence</h2>
                 <p>
-                    MALViNA's architecture comprises several key components that enable its advanced multimodal
-                    capabilities and SOTA-level instructive image editing:
+                    The NHR dataset is generated through a sophisticated, 
+                    multi-stage pipeline designed for optimal efficiency and quality:
                 </p>
                 <ul class="list-disc list-inside space-y-2 mt-4 ml-4">
-                    <li><strong>Vision-Language Models (VLMs):</strong> For robust understanding of both visual content and natural language instructions.</li>
-                    <li><strong>Diffusion Models:</strong> Integrated for generating high-quality, pixel-perfect image edits based on instructions.</li>
-                    <li><strong>MoT Transformer Adapter:</strong> Seamlessly integrates information from visual language model to diffusion transformer.</li>
+                    <li><strong>Automated Sequence Generation:</strong> At its core, the NHR pipeline utilizes SOTA VLMs to interpret visual content and generate intricate editing instructions. These instructions, ranging from subtle adjustments to complex compositional changes, are then executed by advanced image editing models, creating the "edited" versions of the original images. This ensures a rich variety of editing tasks and corresponding ground-truth results.</li>
+                    <li><strong>Intelligent Filtration and Quality Control: </strong> A critical component of NHR is its robust filtration system. This stage employs a suite of SOTA models to assess the quality, accuracy, and coherence of the generated image-editing pairs. Models are tasked with verifying that the edits accurately reflect the instructions, ensuring visual fidelity, and flagging any artifacts or inconsistencies. This automated quality control guarantees a dataset free from human error and subjective interpretations.</li>
+                    <li><strong>Scalability and Diversity:</strong> By removing human intervention, the NHR pipeline offers unprecedented scalability. It can continuously generate new data, allowing for the creation of vast and diverse datasets tailored to specific research needs. This eliminates the bottleneck of manual annotation, accelerating the development and training of more robust and versatile image editing AI.
+
+</li>
                 </ul>
                 <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
                     <img src="images/MALVINA_architecture.png" alt="MALViNA Architecture Diagram Placeholder" class="w-full h-auto rounded-lg"

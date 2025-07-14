@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALViNA - Multimodal Artificial Language Vision Neural Assistant</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a clean, academic look, similar to the example */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light background */
+            color: #333; /* Darker text for readability */
+        }
+        .container-base {
+            max-width: 960px; /* Max width for content, similar to research papers */
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2, h3, h4 {
+            font-weight: 700; /* Bold headings */
+            color: #222;
+        }
+        h1 {
+            font-size: 3.5rem; /* Larger main title */
+            line-height: 1.1;
+        }
+        h2 {
+            font-size: 4rem; /* Section titles, made bigger as requested */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .button-group .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            margin: 0.5rem;
+            white-space: nowrap; /* Prevent button text from wrapping */
+        }
+        .btn-primary {
+            background-color: #4f46e5; /* Indigo-600 */
+            color: #fff;
+            border: 1px solid #4f46e5;
+        }
+        .btn-primary:hover {
+            background-color: #4338ca; /* Indigo-700 */
+            border-color: #4338ca;
+        }
+        .btn-secondary {
+            background-color: #fff;
+            color: #4f46e5; /* Indigo-600 */
+            border: 1px solid #4f46e5;
+        }
+        .btn-secondary:hover {
+            background-color: #f0f2f5;
+            color: #312e81; /* Indigo-800 */
+        }
+        .btn-disabled {
+            background-color: #e5e7eb; /* Gray-200 */
+            color: #9ca3af; /* Gray-400 */
+            border: 1px solid #e5e7eb;
+            cursor: not-allowed;
+        }
+        .section-box {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Rounded corners for sections */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="antialiased leading-normal">
+    <div class="container-base">
+        <!-- Project Title -->
+        <header class="text-center mb-10">
+            <!-- Corrected semantic usage: h1 for main title, p for subtitle -->
+            <h1 class="text-4xl text-indigo-700 mt-10">MALViNA</h1>
+            <p class="text-2xl text-gray-700 mt-2">Multimodal Artificial Language Vision Neural Assistant</p>
+            <div class="mt-8 flex justify-center flex-wrap button-group">
+                <a href="#" class="btn btn-primary">
+                    <!-- User's provided Paper icon with updated viewBox -->
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.8423 0a1.0037 1.0037 0 0 0-.922.6078c-.1536.3687-.0438.6275.2938 1.1113l6.9185 8.3597-1.0223 1.1058a1.0393 1.0393 0 0 0 .003 1.4229l1.2292 1.3135-5.4391 6.4444c-.2803.299-.4538.823-.2971 1.1986a1.0253 1.0253 0 0 0 .9585.635.9133.9133 0 0 0 .6891-.3405l5.783-6.126 7.4902 8.0051a.8527.8527 0 0 0 .6835.2597.9575.9575 0 0 0 .8777-.6138c.1577-.377-.017-.7502-.306-1.1407l-7.0518-8.3418 1.0632-1.13a.9626.9626 0 0 0 .0089-1.3165L4.6336.4639s-.3733-.4535-.768-.463zm0 .272h.0166c.2179.0052.4874.2715.5644.3639l.005.006.0052.0055 10.169 10.9905a.6915.6915 0 0 1-.0072.945l-1.0666 1.133-1.4982-1.7724-8.5994-10.39c-.3286-.472-.352-.6183-.2592-.841a.7307.7307 0 0 1 .6704-.4401Zm14.341 1.5701a.877.877 0 0 0-.6554.2418l-5.6962 6.1584 1.6944 1.8319 5.3089-6.5138c.3251-.4335.479-.6603.3247-1.0292a1.1205 1.1205 0 0 0-.9763-.689zm-7.6557 12.2823 1.3186 1.4135-5.7864 6.1295a.6494.6494 0 0 1-.4959.26.7516.7516 0 0 1-.706-.4669c-.1119-.2682.0359-.6864.2442-.9083l.0051-.0055.0047-.0055z" clip-rule="evenodd"></path></svg>
+                    Paper
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <!-- User's provided Code icon with updated viewBox -->
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" clip-rule="evenodd"></path></svg>
+                    Code
+                </a>
+                <a href="#" class="btn btn-primary btn-disabled cursor-not-allowed">
+                    <!-- Updated Demo icon with updated viewBox -->
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.752 11.164l-3.235 2.157A1 1 0 0110 13.5v-7a1 1 0 011.517-.852l3.235 2.157a1 1 0 010 1.704zM2 10a8 8 0 1116 0 8 8 0 01-16 0z" clip-rule="evenodd"></path></svg>
+                    Demo
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <!-- Updated Dataset icon with updated viewBox -->
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z" clip-rule="evenodd"></path></svg>
+                    Dataset
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main>
+            <!-- Abstract Section -->
+            <section class="section-box">
+                <h2 class="text-indigo-600">Abstract</h2>
+                <p>
+                    We introduce MALViNA, a novel Multimodal Artificial Language Vision Neural Assistant, designed to
+                    seamlessly integrate visual and linguistic understanding. MALViNA combines **state-of-the-art
+                    Vision-Language Models (VLMs) and Diffusion Models** to achieve **SOTA-level, pixel-perfect
+                    instructive image editing**. This cutting-edge architecture enables it to process and generate
+                    responses based on complex multimodal inputs. This work presents the architectural details,
+                    training methodology, and preliminary results demonstrating MALViNA's capabilities in tasks such
+                    as visual question answering, image captioning, and cross-modal reasoning, with a particular
+                    focus on its innovative image editing prowess. We believe MALViNA represents a significant step
+                    towards more holistic and intelligent AI systems.
+                </p>
+            </section>
+
+            <!-- Model Architecture / Key Features Section -->
+            <section class="section-box">
+                <h2 class="text-indigo-600">Model Overview & Key Features</h2>
+                <p>
+                    MALViNA's architecture comprises several key components that enable its advanced multimodal
+                    capabilities and SOTA-level instructive image editing:
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-4 ml-4">
+                    <li><strong>Vision-Language Models (VLMs):</strong> For robust understanding of both visual content and natural language instructions.</li>
+                    <li><strong>Diffusion Models:</strong> Integrated for generating high-quality, pixel-perfect image edits based on instructions.</li>
+                    <li><strong>MoT Transformer Adapter:</strong> Seamlessly integrates information from visual language model to diffusion transformer.</li>
+                </ul>
+                <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
+                    <img src="images/MALVINA_architecture.png" alt="MALViNA Architecture Diagram Placeholder" class="w-full h-auto rounded-lg"
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/BFDBFE/1E40AF?text=Architecture+Diagram';">
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                        Figure: Simplified Architecture Diagram of MALViNA.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Dataset Section -->
+            <section class="section-box">
+                <h2 class="text-indigo-600">Self-Data Dataset Generation Pipeline</h2>
+                <p>
+                    A significant contribution of this work is the **fully automatic pipeline for dataset generation**,
+                    which ensures a scalable and high-quality source of data for training and evaluation. This pipeline
+                    involves the following steps:
+                </p>
+                <ol class="list-decimal list-inside space-y-2 mt-4 ml-4">
+                    <li><strong>Prompt Generation with LLM:</strong> A large language model is used to automatically generate diverse and complex input prompts for image editing tasks.</li>
+                    <li><strong>Initial Image Generation with Flux:</strong> An initial image is generated based on the LLM-generated prompt using the Flux1.dev model.</li>
+                    <li><strong>Image Editing with MALViNA:</strong> The generated image is then edited by MALViNA according to specific instructions, demonstrating its instructive editing capabilities.</li>
+                    <li><strong>Quality Assessment with Qwen Model:</strong> The edited images are assessed for pixel-perfect accuracy, instruction following and aesthetics using the Qwen model, ensuring high standards for the dataset.</li>
+                </ol>
+                <p class="mt-4">
+                    This automated approach allows for the creation of a vast and diverse dataset, crucial for
+                    developing and evaluating robust multimodal models like MALViNA.
+                </p>
+            </section>
+
+
+            <!-- Publications / Citations Section -->
+            <section class="section-box">
+                <h2 class="text-indigo-600">Publications</h2>
+                <p>
+                    [1] Layer team "MALViNA:Multimodal Artificial Language Vision Neural Assistant."
+                    <em>Proceedings of the Conference</em>, 2025.
+                    <a href="#" class="text-indigo-600 hover:underline ml-2">[Paper]</a>
+                </p>
+                <h3 class="text-xl font-semibold text-gray-800 mt-6">BibTeX</h3>
+                <pre class="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>@inproceedings{layer|malvina,
+  title={MALViNA: Multimodal Artificial Language Vision Neural Assistant},
+  author={Layer team},
+  booktitle={},
+  year={2025}
+}</code></pre>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-12 mb-4">
+            <p>&copy; 2025 MALViNA Project. Built with ❤️ and Tailwind CSS.</p>
+        </footer>
+    </div>
+</body>
+</html>

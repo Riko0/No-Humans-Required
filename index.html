@@ -6,86 +6,14 @@
     <title>No Humans Required Dataset</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom font for a clean, academic look, similar to the example */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* Light background */
-            color: #333; /* Darker text for readability */
-        }
-        .container-base {
-            max-width: 960px; /* Max width for content, similar to research papers */
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        h1, h2, h3, h4 {
-            font-weight: 700; /* Bold headings */
-            color: #222;
-        }
-        h1 {
-            font-size: 3.5rem; /* Larger main title */
-            line-height: 1.1;
-        }
-        h2 {
-            font-size: 4rem; /* Section titles, made bigger as requested */
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        p {
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        .button-group .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease-in-out;
-            margin: 0.5rem;
-            white-space: nowrap; /* Prevent button text from wrapping */
-        }
-        .btn-primary {
-            background-color: #4f46e5; /* Indigo-600 */
-            color: #fff;
-            border: 1px solid #4f46e5;
-        }
-        .btn-primary:hover {
-            background-color: #4338ca; /* Indigo-700 */
-            border-color: #4338ca;
-        }
-        .btn-secondary {
-            background-color: #fff;
-            color: #4f46e5; /* Indigo-600 */
-            border: 1px solid #4f46e5;
-        }
-        .btn-secondary:hover {
-            background-color: #f0f2f5;
-            color: #312e81; /* Indigo-800 */
-        }
-        .btn-disabled {
-            background-color: #e5e7eb; /* Gray-200 */
-            color: #9ca3af; /* Gray-400 */
-            border: 1px solid #e5e7eb;
-            cursor: not-allowed;
-        }
-        .section-box {
-            background-color: #ffffff;
-            border-radius: 0.75rem; /* Rounded corners for sections */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="antialiased leading-normal">
     <div class="container-base">
         <!-- Project Title -->
         <header class="text-center mb-10">
             <!-- Corrected semantic usage: h1 for main title, p for subtitle -->
-            <h1 class="text-4xl text-indigo-700 mt-10">No Human Required</h1>
+            <h1 class="text-4xl text-indigo-700 mt-10">No Humans Required</h1>
             <p class="text-2xl text-gray-700 mt-2">Introducing NHR: A High-Quality, Fully Automated Dataset for Image Editing</p>
             <div class="mt-8 flex justify-center flex-wrap button-group">
                 <a href="#" class="btn btn-primary">
@@ -113,6 +41,26 @@
 
         <!-- Main Content Area -->
         <main>
+            <!-- Visual Section -->
+            <section class="section-box">
+                <div class="ba-group">
+
+                <div class="ba-caption" id="ba-caption"></div>
+
+                <div class="ba-container">
+                    <div class="ba animate" id="ba-viewport">
+                    <img src="images/img0_after.jpg"  alt="After"  class="ba__img ba__img--after">
+                    <img src="images/img0_before.jpg" alt="Before" class="ba__img ba__img--before">
+                    <div class="ba__handle"></div>
+                    <input type="range" class="ba__range" min="0" max="100" value="50"
+                            aria-label="Compare this image pair">
+                    </div>
+
+                    <div class="ba-picker" id="pair-picker"></div>
+                </div>
+                </div>
+            </section>
+
             <!-- Abstract Section -->
             <section class="section-box">
                 <h2 class="text-indigo-600">Abstract</h2>
@@ -140,13 +88,13 @@
                     <li><strong>Intelligent Filtration and Quality Control: </strong> A critical component of NHR is its robust filtration system. This stage employs a suite of SOTA models to assess the quality, accuracy, and coherence of the generated image-editing pairs. Models are tasked with verifying that the edits accurately reflect the instructions, ensuring visual fidelity, and flagging any artifacts or inconsistencies. This automated quality control guarantees a dataset free from human error and subjective interpretations.</li>
                     <li><strong>Scalability and Diversity:</strong> By removing human intervention, the NHR pipeline offers unprecedented scalability. It can continuously generate new data, allowing for the creation of vast and diverse datasets tailored to specific research needs. This eliminates the bottleneck of manual annotation, accelerating the development and training of more robust and versatile image editing AI.
 
-</li>
+                    </li>
                 </ul>
                 <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
-                    <img src="images/MALVINA_architecture.png" alt="MALViNA Architecture Diagram Placeholder" class="w-full h-auto rounded-lg"
+                    <img src="images/pipeline.jpg" alt="NHR Pipeline" class="w-full h-auto rounded-lg"
                          onerror="this.onerror=null;this.src='https://placehold.co/600x400/BFDBFE/1E40AF?text=Architecture+Diagram';">
                     <p class="text-center text-sm text-gray-500 mt-2">
-                        Figure: Simplified Architecture Diagram of MALViNA.
+                        Proposed NoHumansRequired framework scheme.
                     </p>
                 </div>
             </section>
@@ -169,8 +117,47 @@
                     This automated approach allows for the creation of a vast and diverse dataset, crucial for
                     developing and evaluating robust multimodal models like MALViNA.
                 </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
+                        <img src="images/01_general_categories.jpg" alt="NHR Pipeline" class="w-full h-auto rounded-lg">
+                        <p class="text-center text-sm text-gray-500 mt-2">
+                            General category group distribution.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
+                        <img src="images/02_misc_breakdown.jpg" alt="NHR Pipeline" class="w-full h-auto rounded-lg">
+                        <p class="text-center text-sm text-gray-500 mt-2">
+                            Miscellaneous operations distribution.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
+                        <img src="images/03_composite_breakdown_log.jpg" alt="NHR Pipeline" class="w-full h-auto rounded-lg">
+                        <p class="text-center text-sm text-gray-500 mt-2">
+                            Composite operations distribution, logarithmic scale.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
+                        <img src="images/04_styles.jpg" alt="NHR Pipeline" class="w-full h-auto rounded-lg">
+                        <p class="text-center text-sm text-gray-500 mt-2">
+                            Image style distribution, 'standard' stands for images with no explicit style.
+                        </p>
+                    </div>
+                </div>
+
             </section>
 
+            <section class="section-box">
+                <div class="collage-viewer" id="collage-viewer">
+                    <div class="collage-picker" id="collage-picker">
+                    </div>
+                    <div class="collage-display">
+                        <img src="" alt="Selected collage" class="collage-image" id="collage-image">
+                    </div>
+                </div>
+            </section>
 
             <!-- Publications / Citations Section -->
             <section class="section-box">
@@ -195,5 +182,6 @@
             <p>&copy; 2025 MALViNA Project. Built with ❤️ and Tailwind CSS.</p>
         </footer>
     </div>
+<script src="scripts.js"></script>
 </body>
 </html>

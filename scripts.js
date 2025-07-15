@@ -86,6 +86,17 @@ wrapper.addEventListener('click', e => {
 slider.addEventListener('input', () => setPos(+slider.value));
 wrapper.addEventListener('animationend', () => wrapper.classList.remove('animate'));
 
+const preloadImagePairs = () => {
+  imagePairs.forEach(pair => {
+    const imgBefore = new Image();
+    const imgAfter = new Image();
+    imgBefore.src = pair.before;
+    imgAfter.src = pair.after;
+  });
+};
+
+preloadImagePairs();
+
 imagePairs.forEach((pair, idx) => {
   const btn = document.createElement('button');
   btn.className = 'ba-picker__button';

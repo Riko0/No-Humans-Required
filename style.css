@@ -22,11 +22,13 @@ h2 {
     font-size: 4rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+
 }
 p {
     line-height: 1.6;
     margin-bottom: 1rem;
 }
+p + p { margin-top: 1.5em; } /* Adds more space between paragraphs */
 .button-group .btn {
     display: inline-flex;
     align-items: center;
@@ -272,4 +274,13 @@ p {
 
 .collage-image.fade-out {
     opacity: 0;
+}
+
+.disabled-logo {
+filter: grayscale(100%);
+}
+
+/* or only on hover */
+.btn-secondary:hover .disabled-logo {
+filter: grayscale(100%);
 }

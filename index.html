@@ -75,11 +75,9 @@
             <section class="section-box">
                 <h2 class="text-indigo-600 font-bold">Abstract</h2>
 
-                <p>Introducing No Humans Required (NHR): A Novel Paradigm for Image Editing Dataset Generation</p>
-                
                 <p>We are pleased to introduce <strong>No Humans Required (NHR)</strong>, a novel, fully automated pipeline engineered for the generation of high-fidelity, pixel-perfect image editing sequences. This innovation culminates in <strong>NHR-Edit</strong>, a new dataset meticulously constructed to facilitate the training and rigorous evaluation of advanced image editing models.</p>
 
-                <p>NHR addresses the inherent limitations of traditional image editing datasets, specifically mitigating the biases and inefficiencies associated with manual annotation processes. Our methodology leverages state-of-the-art <strong>Vision-Language Models (VLMs)</strong> and other advanced artificial intelligence paradigms. These models are synergistically employed for both the programmatic synthesis of diverse image content and the subsequent stringent filtration of generated data. This automated paradigm ensures the production of an extensive array of complex and varied editing scenarios, thereby advancing the capabilities of AI in visual manipulation tasks.</p>
+                <p>NHR addresses the inherent limitations of traditional image editing datasets, specifically mitigating the biases and inefficiencies associated with manual annotation processes. Our methodology leverages state-of-the-art <strong>Vision-Language Models (VLMs), Text2Image generators and Large Language Models (LLMs)</strong> and other advanced artificial intelligence paradigms with a bunch of euristics. These models are synergistically employed for both the programmatic synthesis of diverse image content and the subsequent stringent filtration of generated data. This automated paradigm ensures the production of an extensive array of complex and varied editing scenarios, thereby advancing the capabilities of AI in visual manipulation tasks.</p>
             </section>
 
             <section class="section-box">
@@ -88,13 +86,13 @@
                     The NHR-Edit dataset is generated through a sophisticated, 
                     multi-stage pipeline designed for optimal efficiency and quality:
                 </p>
-                <ul class="list-disc list-inside space-y-2 mt-4 ml-4">
-                    <li><strong>Starting Point Generation:</strong> To obtain high-quality input images, we generate them using the latest Text-to-Image models and the best LLMs. This results in high-quality, very detailed, and style-varied images with many details to edit in later steps.</li>
-                    <li><strong>Automated Sequence Continuance:</strong> At its core, the NHR pipeline utilizes SOTA VLMs to interpret visual content and generate intricate editing instructions. These instructions, ranging from subtle adjustments to complex compositional changes, are then executed by advanced image editing models, creating the "edited" versions of the original images. This ensures a rich variety of editing tasks and corresponding ground-truth results.</li>
+                <ol class="list-disc list-inside space-y-2 mt-4 ml-4">
+                    <li><strong>Starting Point Generation:</strong> To obtain high-quality input images, we generate them using the latest Flux1.dev model as the SOTA T2I model and OpenAI O3 as one of the best LLMs. This results in high-quality, very detailed, and style-varied images with many details to edit in later steps.</li>
+                    <li><strong>Automated Sequence Continuance:</strong> At its core, the NHR pipeline utilizes LLMs to generate intricate editing instructions from initial prompt. These instructions, ranging from subtle adjustments to complex compositional changes, are then executed by advanced image editing models, creating the "edited" versions of the original images. This ensures a rich variety of editing tasks and corresponding ground-truth results.</li>
                     <li><strong>Intelligent Filtration and Quality Control:</strong> A critical component of NHR is its robust filtration system. This stage employs a suite of SOTA models to assess the quality, accuracy, and coherence of the generated image-editing pairs. Models are tasked with verifying that the edits accurately reflect the instructions, ensuring visual fidelity, and flagging any artifacts or inconsistencies. This automated quality control guarantees a dataset free from human error and subjective interpretations.</li>
                     <li><strong>Scalability and Diversity:</strong> By removing human intervention, the NHR pipeline offers unprecedented scalability. It can continuously generate new data, allowing for the creation of vast and diverse datasets tailored to specific research needs. This eliminates the bottleneck of manual annotation, accelerating the development and training of more robust and versatile image editing AI.
                     </li>
-                </ul>
+                </ol>
                 <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
                     <img src="images/pipeline.jpg" alt="NHR Pipeline" class="w-full h-auto rounded-lg"
                          onerror="this.onerror=null;this.src='https://placehold.co/600x400/BFDBFE/1E40AF?text=Architecture+Diagram';">
@@ -116,6 +114,8 @@
                     <li><strong>Initial Image Generation with Flux:</strong> An initial image is generated based on the LLM-generated prompt using the Flux1.dev model.</li>
                     <li><strong>Image Editing with In-house DiT:</strong> The generated image is then edited by a proprietary model according to specific instructions, demonstrating its instructive editing capabilities.</li>
                     <li><strong>Quality Assessment with Qwen Model:</strong> The edited images are assessed for pixel-perfect accuracy, instruction following, and aesthetics using the Qwen model, ensuring high standards for the dataset.</li>
+                    <li><strong>Strong Augmentations:</strong> For obtained triplets, we use inversion and bootstrap composition operations to expand number of available edits.</li>
+                    <li><strong>Backward consistency filter:</strong> After multiplying number of samples, we perform filtering, based on inversion or composition quality with filtering origin of augmented triplet to clean all the possible errors.</li>
                 </ol>
                 <p class="mt-4">
                     This automated approach allows for the creation of a vast and diverse dataset, crucial for

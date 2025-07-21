@@ -15,7 +15,7 @@
             <h1 class="text-4xl text-indigo-700 mt-10">No Humans Required</h1>
             <p class="text-2xl text-gray-700 mt-2">Introducing NHR: A Fully Automated Pipeline for Image Editing Dataset Creation</p>
             <div class="mt-8 flex justify-center flex-wrap button-group">
-                <a href="#" class="btn btn-secondary">
+                <a href="http://arxiv.org/abs/2507.14119" class="btn btn-secondary">
                     <img
                         class="w-5 h-5 mr-2"
                         src="https://upload.wikimedia.org/wikipedia/commons/b/bc/ArXiv_logo_2022.svg"
@@ -42,12 +42,14 @@
                     />
                     Bagel-NHR-Edit
                 </a>
-                <a href="#" class="btn btn-primary btn-disabled cursor-not-allowed">
-                    <svg class="w-5 h-5 mr-2 disabled-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" fill="#FF6347"/>
-                        <path d="M9.75 15.5L15.25 12L9.75 8.5V15.5Z" fill="#FFFFFF"/>
-                    </svg>
-                    Demo (Not Available Yet)
+                <a href="https://huggingface.co/spaces/iitolstykh/BAGEL-NHR-Edit" class="btn btn-secondary">
+                    <img
+                        class="w-5 h-5 mr-2"
+                        src="https://huggingface.co/front/assets/huggingface_logo.svg"
+                        alt="Hugging Face logo"
+                        aria-hidden="true"
+                    />
+                    Demo
                 </a>
             </div>
         </header>
@@ -164,20 +166,47 @@
             </section>
 
             <section class="section-box">
-                <h2 class="text-indigo-600 font-bold">Publications</h2>
+                <h2 class="text-indigo-600 font-bold">Bagel-NHR-Edit</h2>
                 <p>
-                    [1] Layer team, "NoHumansRequired: Autonomous High-Quality Image Editing Triplet Mining."
-                    <em></em>, 2025.
-                    <a href="#" class="text-indigo-600 hover:underline ml-2">[Paper]</a>
+                     We release BAGEL-NHR-EDIT, a LoRA-tuned BAGEL variant
+                    that achieves higher scores than the base model on ImgEditBench and GEdit-Bench, demonstrating that fine-tuning on
+                    NHR-Edit improves the underlying editing model.
                 </p>
-                <h3 class="text-xl font-semibold text-gray-800 mt-6">BibTeX</h3>
-                <pre class="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>@inproceedings{layer|NoHumansRequired,
-  title={NoHumansRequired: Autonomous High-Quality Image Editing Triplet Mining.},
-  author={Layer team},
-  booktitle={},
-  year={2025}
-}</code></pre>
+                <div class="mt-6 w-full mx-auto bg-blue-100 rounded-xl p-4 shadow-inner">
+                    <img src="images/Bagel_NHR_Edit_comp.jpg" alt="NHR Pipeline" class="w-full h-auto rounded-lg">
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                        Results comparison between original Bagel-7B-MoT and BAGEL-NHR-EDIT on samples from ImgEdit and GEdit benches.
+                    </p>
+                </div>
+
             </section>
+
+
+            <section class="section-box">
+            <h2 class="text-indigo-600 font-bold">Publications</h2>
+            <p>
+                [1] Kuprashevich, M., Alekseenko, G., Tolstykh, I., Fedorov, G., Suleimanov, B., Dokholyan, V., & Gordeev, A. (2025).
+                <em>NoHumansRequired: Autonomous High-Quality Image Editing Triplet Mining</em>.
+                arXiv.
+                <a href="https://arxiv.org/abs/2507.14119" class="text-indigo-600 hover:underline ml-2" target="_blank" rel="noopener noreferrer">[Paper]</a>
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6">BibTeX</h3>
+            <pre class="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+<code>@article{Kuprashevich2025NoHumansRequired,
+    arxivId = {2507.14119},
+    author = {Kuprashevich, Maksim and Alekseenko, Grigorii and Tolstykh, Irina and Fedorov, Georgii and Suleimanov, Bulat and Dokholyan, Vladimir and Gordeev, Aleksandr},
+    month = {jul},
+    title = {{NoHumansRequired: Autonomous High-Quality Image Editing Triplet Mining}},
+    year = {2025},
+    eprint = {2507.14119},
+    archivePrefix = {arXiv},
+    primaryClass = {cs.CV},
+    url = {https://arxiv.org/abs/2507.14119}
+}
+</code>
+    </pre>
+</section>
         </main>
 
         <footer class="text-center text-gray-500 text-sm mt-12 mb-4">
